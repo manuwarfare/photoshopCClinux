@@ -33,7 +33,7 @@ and sets some necessary components up for the best performance
 
 if they are not already installed you can install them using your package manager for example in Fedora Linux
 ```bash
-sudo dnf -S wine winetricks megatools
+sudo dnf -y install wine winetricks megatools
 ``` 
 3- make sure you have enough storage in your `/home` partition about `5 GiB`
 > 1 GiB will be free after installation
