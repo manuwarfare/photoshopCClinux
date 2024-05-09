@@ -3,7 +3,8 @@
 
 ![screenshot](images/Screenshot.png)
 
-![wine version](https://img.shields.io/badge/wine-%E2%96%B25.22-red) ![Tested on Fedora](https://img.shields.io/badge/Tested%20on-Fedora-blue) ![Tested on Arch](https://img.shields.io/badge/Tested%20on-Arch-green) ![Tested on Ubuntu](https://img.shields.io/badge/Tested%20on-Ubuntu-orange) ![GitHub stars](https://img.shields.io/github/stars/Gictorbit/photoshopCClinux) ![rep size](https://img.shields.io/github/repo-size/gictorbit/photoshopCClinux) ![bash](https://img.shields.io/badge/bash-5.0-yellowgreen)
+![Tested on Fedora](https://img.shields.io/badge/Tested%20on-Fedora-blue) ![Tested on Arch](https://img.shields.io/badge/Tested%20on-Arch-green) ![Tested on Ubuntu](https://img.shields.io/badge/Tested%20on-Ubuntu-orange)
+![GitHub stars](https://img.shields.io/github/stars/Gictorbit/photoshopCClinux) ![wine version](https://img.shields.io/badge/wine-%E2%96%B25.22-red) ![rep size](https://img.shields.io/github/repo-size/gictorbit/photoshopCClinux) ![bash](https://img.shields.io/badge/bash-5.0-yellowgreen)
 </div>
 
 # Photoshop CC v19 installer for Linux
