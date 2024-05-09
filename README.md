@@ -15,7 +15,7 @@ and sets some necessary components up for the best performance
 * downloads `photoshop.exe` installer
 * creates photoshop command and a desktop entry
 * wine dark mode
-* supports graphic cards like (`intel`, `Nvidia`)
+* supports graphic cards like (`intel`, `Nvidia`, `AMD`)
 * saves the downloaded files in your cache directory
 * It's free and you will not need any license key
 * works on any Linux distribution
@@ -27,7 +27,6 @@ and sets some necessary components up for the best performance
 * `wine`
 * `wine64`
 * `winetricks`
-* `md5sum`
 * `megatools`
 
 
