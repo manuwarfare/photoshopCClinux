@@ -53,8 +53,7 @@ git clone https://github.com/manuwarfare/photoshopCClinux.git && cd photoshopCCl
 then you can easily run `setup.sh` script to install photoshop cc on your Linux distro
 
 ```bash
-chmod +x setup.sh
-./setup.sh
+chmod +x setup.sh && ./setup.sh
 ```
 
 you can use `-d` to specify the installation path, and `-c` for the cache directory.
