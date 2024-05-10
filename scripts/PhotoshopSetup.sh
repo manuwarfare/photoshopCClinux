@@ -71,8 +71,7 @@ function main() {
 
 function replacement() {
     local filename="replacement.tgz"
-    #local filelink="https://remipago.com/download/replacement.tgz"
-	local filelink="https://mega.nz/file/YdIGhCjY#VtmQXStofkh5-C7myEfl_W1WHJ5KPYGoedYRcNRcvb0"
+    local filelink="https://download856.mediafire.com/ogifl69iccxgRLD50nrJSfvYezVajr-ihtPMtQtTYXZIyi1tGCWZgWbwyJyyLfAvNfOEmT3Jv2tcq7rskfkFTHxhf4f5PihHq8imTdVX79flqFNk1tJMVEgdXIpEONZGKHGcPaQNrGbZ2HZAC2vwiql_fDwGNtuViJNHTdTlNEsOKPg/hu5jyfg2w6j6pxu/replacement.tgz"
     local filepath="$CACHE_PATH/$filename"
 	
 	# Verificar si el archivo ya existe en la carpeta destino
@@ -81,27 +80,22 @@ function replacement() {
         rm "$filepath" || error "Error removing existing file: $filepath"
     fi
 
-    #wget -O "$filepath" "$filelink" || error "Error downloading $filename"
-	megadl --path="$filepath" "$filelink" || error "Error downloading $filename"
+    wget -O "$filepath" "$filelink" || error "Error downloading $filename"
+	#megadl --path="$filepath" "$filelink" || error "Error downloading $filename"
 
     mkdir "$RESOURCES_PATH/replacement"
     show_message "extract replacement component..."
-    #tar -xzf $filepath -C "$RESOURCES_PATH/replacement"
-	
+    	
 	# Descomprimir utilizando un tar diferente para manejar múltiples entradas gzip
     tar -xf "$filepath" -C "$RESOURCES_PATH/replacement" || error "Error extracting replacement files"
 
     local replacefiles=("IconResources.idx" "PSIconsHighRes.dat" "PSIconsLowRes.dat")
     local destpath="$WINE_PREFIX/drive_c/users/$USER/PhotoshopSE/Resources"
-	
-	
-    
+	    
     for f in "${replacefiles[@]}";do
         local sourcepath="$RESOURCES_PATH/replacement/$f"
 		
-        #cp -f "$sourcepath" "$destpath" || error "cant copy replacement $f file..."
-		
-		# Verificar si el archivo existe antes de copiarlo
+     # Verificar si el archivo existe antes de copiarlo
         if [ -f "$sourcepath" ]; then
             cp -f "$sourcepath" "$destpath" || error "Can't copy replacement $f file..."
         else
@@ -115,8 +109,7 @@ function replacement() {
 
 function install_photoshopSE() {
     local filename="photoshopCC-V19.1.6-2018x64.tgz"
-    #local filelink="https://remipago.com/download/photoshopCC-V19.1.6-2018x64.tgz"
-	local filelink="https://mega.nz/file/0do1UJLb#7AZkUJ2l1HX1hcP1T0WB0tD3UKjyRKyQf433wDEjkn4"
+    local filelink="https://download1591.mediafire.com/e2pa6l6b2ehgftInbViNlr64eqOjmHywY6AsaEDXeBi3yGr8iH8giewNN3mAFQlh6_znfqMLJZ8Mzw5clcd4UOX4f9TTDlDIRX3aA1hP4ozo10UsIFioFFnsPZmKLxsJ84MiPSuv8ZxpqvBkpGiKxZ8iv5n3b9U_u_yAj_OyCIhNFcU/q58wpcvf2l7gswp/photoshopCC-V19.1.6-2018x64.tgz"
     local filepath="$CACHE_PATH/$filename"
 	
 	# Verificar si el archivo ya existe en la carpeta destino
@@ -125,16 +118,8 @@ function install_photoshopSE() {
        rm "$filepath" || error "Error removing existing file: $filepath"
     fi
 	
-	#if [ ! -f "$filepath" ]; then
-    #    # Si el archivo no existe, descargarlo
-    #    megadl --path="$filepath" "$filelink" || error "Error downloading $filename"
-    #fi
-	
-	
-	
-	#wget -O "$filepath" "$filelink" || error "Error downloading $filename"
-	megadl --path="$filepath" "$filelink" || error "Error downloading $filename"
-	
+	wget -O "$filepath" "$filelink" || error "Error downloading $filename"
+		
     mkdir "$RESOURCES_PATH/photoshopCC"
     show_message "extract photoshop..."
     tar -xzf "$filepath" -C "$RESOURCES_PATH/photoshopCC"
