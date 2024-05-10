@@ -3,7 +3,7 @@
 
 ![screenshot](images/Screenshot.png)
 
-![Tested on Fedora](https://img.shields.io/badge/Tested%20on-Fedora-blue) ![Tested on Arch](https://img.shields.io/badge/Tested%20on-Arch-green) ![Tested on Ubuntu](https://img.shields.io/badge/Tested%20on-Ubuntu-orange)
+![Tested on Fedora](https://img.shields.io/badge/Tested%20on-Fedora-blue) ![Tested on Arch](https://img.shields.io/badge/Tested%20on-Arch-green) ![Tested on Ubuntu](https://img.shields.io/badge/Tested%20on-Ubuntu-orange) ![Tested on Debian](https://img.shields.io/badge/Tested%20on-Debian-red)
 ![wine version](https://img.shields.io/badge/wine-%E2%96%B25.22-red) ![rep size](https://img.shields.io/github/repo-size/gictorbit/photoshopCClinux) ![bash](https://img.shields.io/badge/bash-5.0-yellowgreen)
 </div>
 
@@ -28,12 +28,11 @@ and sets some necessary components up for the best performance
 * `wine`
 * `wine64`
 * `winetricks`
-* `megatools`
 
 
 if they are not already installed you can install them using your package manager for example in Fedora Linux
 ```bash
-sudo dnf -y install wine winetricks megatools
+sudo dnf -y install wine winetricks
 ``` 
 3- make sure you have enough storage in your `/home` partition about `5 GiB`
 > 1 GiB will be free after installation
