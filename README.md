@@ -3,7 +3,7 @@
 
 ![screenshot](images/Screenshot.png)
 
-![Tested on Fedora](https://img.shields.io/badge/Tested%20on-Fedora-blue) ![Tested on Arch](https://img.shields.io/badge/Tested%20on-Arch-green) ![Tested on Ubuntu](https://img.shields.io/badge/Tested%20on-Ubuntu-orange) ![Tested on Debian](https://img.shields.io/badge/Tested%20on-Debian-red)
+![Tested on Fedora](https://img.shields.io/badge/Tested%20on-Fedora-blue) ![Tested on Arch](https://img.shields.io/badge/Tested%20on-Arch-green) ![Tested on Ubuntu](https://img.shields.io/badge/Tested%20on-Ubuntu-orange) ![Tested on Debian](https://img.shields.io/badge/Tested%20on-Debian-red) <br/>
 ![wine version](https://img.shields.io/badge/wine-%E2%96%B25.22-red) ![rep size](https://img.shields.io/github/repo-size/gictorbit/photoshopCClinux) ![bash](https://img.shields.io/badge/bash-5.0-yellowgreen)
 </div>
 
