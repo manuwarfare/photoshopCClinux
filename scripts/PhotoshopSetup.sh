@@ -71,6 +71,7 @@ function main() {
 
 function replacement() {
     local filename="replacement.tgz"
+    local filemd5="6441a8e77c082897a99c2b7b588c9ac4"
     local filelink="https://www.mediafire.com/file/hu5jyfg2w6j6pxu/replacement.tgz/file"
     local filepath="$CACHE_PATH/$filename"
 	
@@ -100,6 +101,18 @@ function replacement() {
     show_message "Downloading $filename please wait..."
     wget -O "$filepath" "$real_url" || { error "Error downloading real file"; return 1; }
 
+    # Calcular el hash MD5 del archivo descargado
+    show_message "Calculating MD5 hash of downloaded file..."
+    downloaded_md5=$(md5sum "$filepath" | awk '{print $1}')
+
+    # Comprobar si el hash MD5 coincide con el valor esperado
+    if [ "$downloaded_md5" != "$filemd5" ]; then
+        error "MD5 hash mismatch. Downloaded file may be corrupted."
+    return 1
+    else
+        show_message "MD5 hash verification successful. Downloaded file is valid."
+    fi
+
     mkdir "$RESOURCES_PATH/replacement"
     show_message "extract replacement component..."
     	
@@ -126,6 +139,7 @@ function replacement() {
 
 function install_photoshopSE() {
     local filename="photoshopCC-V19.1.6-2018x64.tgz"
+    local filemd5="b63f6ed690343ee12b6195424f94c33f"
     local filelink="https://www.mediafire.com/file/q58wpcvf2l7gswp/photoshopCC-V19.1.6-2018x64.tgz/file"
     local filepath="$CACHE_PATH/$filename"
 	
@@ -152,9 +166,21 @@ function install_photoshopSE() {
 
     # Descargar el archivo real mediante wget
     #show_message "Downloading real file from URL: $real_url"
-    show_message "Downloading $filename (1.12Gb) please wait to complete..."
+    show_message "Downloading $filename (1.01Gb) please wait..."
     wget -O "$filepath" "$real_url" || { error "Error downloading $filename"; return 1; }
 		
+    # Calcular el hash MD5 del archivo descargado
+    show_message "Calculating MD5 hash of downloaded file..."
+    downloaded_md5=$(md5sum "$filepath" | awk '{print $1}')
+
+    # Comprobar si el hash MD5 coincide con el valor esperado
+    if [ "$downloaded_md5" != "$filemd5" ]; then
+        error "MD5 hash mismatch. Downloaded file may be corrupted."
+    return 1
+    else
+        show_message "MD5 hash verification successful. Downloaded file is valid."
+    fi
+
     mkdir "$RESOURCES_PATH/photoshopCC"
     show_message "extract photoshop..."
     tar -xzf "$filepath" -C "$RESOURCES_PATH/photoshopCC"
