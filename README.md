@@ -8,7 +8,7 @@
 </div>
 
 # Photoshop CC v19 installer for Linux
-This bash script helps you to install Photoshop CC version 19 on your Linux machine using wine behind the scene
+This bash script helps you to install Photoshop CC version 19 on your Linux machine using Wine behind the scene
 and sets some necessary components up for the best performance
 
 ## :rocket: Features
@@ -22,9 +22,9 @@ and sets some necessary components up for the best performance
 * works on any Linux distribution
 
 ## :warning: Requirements
-1- use a 64bit edition of your distro
+1- Use a 64bit edition of your distro
 
-2-make sure the following packages are already installed on your Linux distro
+2- Make sure the following packages are already installed on your Linux distro
 * `wine`
 * `wine64`
 * `winetricks`
@@ -32,41 +32,41 @@ and sets some necessary components up for the best performance
 * `md5sum`
 
 
-if they are not already installed you can install them using your package manager for example in Fedora Linux
+If they are not already installed you can install them using your package manager for example in Fedora Linux
 ```bash
 sudo dnf -y install wine winetricks wget
 ``` 
-3- make sure you have enough storage in your `/home` partition about `5 GiB`
+3- Make sure you have enough storage in your `/home` partition about `5 GiB`
 > 1 GiB will be free after installation
 
-also you can install photoshop in diffrent directory
+Also you can install photoshop in diffrent directory
 
-4- make sure you have an internet connection and about 1.5 Gib traffic to download photoshop and its components
+4- Make sure you have an internet connection and about 1.5 Gib traffic to download photoshop and its components
 
 ## :computer: Installation
 
-the installer scripts use a virtual drive of wine and makes a new `winprefix` for photoshop
+The installer scripts use a virtual drive of wine and makes a new `winprefix` for Photoshop
 
-first of all, you need to clone the repository with this command:
+First of all, you need to clone the repository with this command:
 ```bash
 cd $(xdg-user-dir DOWNLOAD) && git clone https://github.com/manuwarfare/photoshopCClinux.git && cd photoshopCClinux
 ```
-then you can easily run `setup.sh` script to install photoshop cc on your Linux distro
+Then you can easily run `setup.sh` script to install photoshop cc on your Linux distro
 
 ```bash
 chmod +x setup.sh && ./setup.sh
 ```
 ![screenshot](images/setup-screenshot.png)
 
-during installation please pay attention to the script messages
+During installation please pay attention to the script messages
 
 > **NOTE :** make sure OS version in wine is on windows 7
 
-installer script use `winetricks` to install necessary components
+Installer script use `winetricks` to install necessary components
 
 ## :computer: Installation options
 
-you can use `-d` to specify the installation path, and `-c` for the cache directory.
+You can use `-d` to specify the installation path, and `-c` for the cache directory.
 for example:
 ```bash
 ./PhotoshopSetup.sh -d /mnt/myfiles/photoshop
@@ -75,13 +75,13 @@ or
 ```bash
 ./PhotoshopSetup.sh -d /mnt/myfiles/photoshop -c /mnt/cache
 ```
-when no options are given, the installer script will use the default path, 
+When no options are given, the installer script will use the default path, 
 the uninstaller script and others will detect your custom path so there is no problem,
 I recommend using the `-d` option  and having the default cache directory.
 this feature is currently being tested, and will be added to `setup.sh` later
 
 ## :wine_glass: wineprefix Configuration
-if you need to configure the wineprefix of photoshop you can use `winecfg.sh` script just run the command below
+If you need to configure the wineprefix of photoshop you can use `winecfg.sh` script just run the command below
 ```bash
 chmod +x winecfg.sh
 ./winecfg.sh
@@ -90,17 +90,17 @@ chmod +x winecfg.sh
 
 <details>
 <summary>:sparkles: Liquify Tools</summary>
-as you know photoshop has many useful tools like `Liquify Tools`.</br>
+As you know photoshop has many useful tools like `Liquify Tools`.</br>
 
-if you get some errors while working with these tools,
+If you get some errors while working with these tools,
 It may because of the graphics card.</br>
 
-photoshop uses the `GPU` to process these tools so before using these tools make sure that your graphics card `(Nvidia, AMD)` is configured correctly in your Linux machine.
+Photoshop uses the `GPU` to process these tools so before using these tools make sure that your graphics card `(Nvidia, AMD)` is configured correctly in your Linux machine.
 </br>The other solution is you can configure photoshop to use your `CPU` for image processing. to do that, follow the steps below:
 
-* go to edit tab and open `preferences` or `[ctrl+K]`
-* then go to the `performance` tab
-* in the graphics processor settings section, uncheck `Use graphics processor`
+* Go to edit tab and open `preferences` or `[ctrl+K]`
+* Then go to the `performance` tab
+* In the graphics processor settings section, uncheck `Use graphics processor`
 
 ![](https://user-images.githubusercontent.com/34630603/80861998-117b7a80-8c87-11ea-8f56-079f43dfafd9.png)
 </details>
@@ -109,12 +109,12 @@ photoshop uses the `GPU` to process these tools so before using these tools make
 <details>
 <summary>:camera: Adobe Camera Raw</summary>
 
-another useful adobe software is `camera raw` if you want to work with it beside photoshop you must install it separately to do this, after photoshop installation run `cameraRawInstaller.sh` script with commands below:
+Another useful adobe software is `camera raw` if you want to work with it beside photoshop you must install it separately to do this, after photoshop installation run `cameraRawInstaller.sh` script with commands below:
 ```bash
 chmod +x cameraRawInstaller.sh
 ./cameraRawInstaller.sh
 ```
-then restart photoshop.you can open it from 
+Then restart photoshop.you can open it from 
 `Edit >>Preferences >> Camera Raw`
 
 > **_NOTE1:_** the size of camera raw installation file is about 400MB
@@ -125,7 +125,7 @@ then restart photoshop.you can open it from
 </details>
 
 ## :hotsprings: Uninstall
-to uninstall photoshop you can use the uninstaller script with commands below
+To uninstall photoshop you can use the uninstaller script with commands below
 
 ```bash
 chmod +x uninstaller.sh
