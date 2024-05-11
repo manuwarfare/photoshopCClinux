@@ -98,12 +98,11 @@ function replacement() {
     fi
 
     # Descargar el archivo real mediante wget
-    #show_message "Downloading real file from URL: $real_url"
     show_message "Downloading $filename please wait..."
     wget -O "$filepath" "$real_url" || { error "Error downloading real file"; return 1; }
 
     # Calcular el hash MD5 del archivo descargado
-    show_message "Calculating MD5 hash of downloaded file..."
+    show_message "Calculating MD5 hash of $filename"
     downloaded_md5=$(md5sum "$filepath" | awk '{print $1}')
 
     # Comprobar si el hash MD5 coincide con el valor esperado
@@ -166,12 +165,11 @@ function install_photoshopSE() {
     fi
 
     # Descargar el archivo real mediante wget
-    #show_message "Downloading real file from URL: $real_url"
     show_message "Downloading $filename (1.01Gb) please wait..."
     wget -O "$filepath" "$real_url" || { error "Error downloading $filename"; return 1; }
 		
     # Calcular el hash MD5 del archivo descargado
-    show_message "Calculating MD5 hash of downloaded file..."
+    show_message "Calculating MD5 hash of $filename"
     downloaded_md5=$(md5sum "$filepath" | awk '{print $1}')
 
     # Comprobar si el hash MD5 coincide con el valor esperado
