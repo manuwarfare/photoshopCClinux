@@ -71,7 +71,7 @@ function main() {
 
 function replacement() {
     local filename="replacement.tgz"
-    local filelink="https://download856.mediafire.com/ogifl69iccxgRLD50nrJSfvYezVajr-ihtPMtQtTYXZIyi1tGCWZgWbwyJyyLfAvNfOEmT3Jv2tcq7rskfkFTHxhf4f5PihHq8imTdVX79flqFNk1tJMVEgdXIpEONZGKHGcPaQNrGbZ2HZAC2vwiql_fDwGNtuViJNHTdTlNEsOKPg/hu5jyfg2w6j6pxu/replacement.tgz"
+    local filelink="https://www.mediafire.com/file/hu5jyfg2w6j6pxu/replacement.tgz/file"
     local filepath="$CACHE_PATH/$filename"
 	
 	# Verificar si el archivo ya existe en la carpeta destino
@@ -80,8 +80,25 @@ function replacement() {
         rm "$filepath" || error "Error removing existing file: $filepath"
     fi
 
-    wget -O "$filepath" "$filelink" || error "Error downloading $filename"
-	#megadl --path="$filepath" "$filelink" || error "Error downloading $filename"
+    # Descargar la página de MediaFire
+    show_message "Downloading MediaFire page..."
+    local mediapage="$CACHE_PATH/mediapage.html"
+    wget -O "$mediapage" "$filelink" || { error "Error downloading MediaFire page"; return 1; }
+
+    # Extraer la URL de descarga directa del archivo desde la página de MediaFire
+    show_message "Extracting direct download URL from MediaFire page..."
+    local real_url=$(grep -oP 'https://download[0-9]+\.mediafire\.com/[^"]+' "$mediapage" | head -n 1)
+    if [ -z "$real_url" ]; then
+        error "Failed to extract direct download URL from MediaFire page."
+        return 1
+    else
+        show_message "Direct download URL extracted: $real_url"
+    fi
+
+    # Descargar el archivo real mediante wget
+    #show_message "Downloading real file from URL: $real_url"
+    show_message "Downloading $filename please wait..."
+    wget -O "$filepath" "$real_url" || { error "Error downloading real file"; return 1; }
 
     mkdir "$RESOURCES_PATH/replacement"
     show_message "extract replacement component..."
@@ -109,7 +126,7 @@ function replacement() {
 
 function install_photoshopSE() {
     local filename="photoshopCC-V19.1.6-2018x64.tgz"
-    local filelink="https://download1591.mediafire.com/e2pa6l6b2ehgftInbViNlr64eqOjmHywY6AsaEDXeBi3yGr8iH8giewNN3mAFQlh6_znfqMLJZ8Mzw5clcd4UOX4f9TTDlDIRX3aA1hP4ozo10UsIFioFFnsPZmKLxsJ84MiPSuv8ZxpqvBkpGiKxZ8iv5n3b9U_u_yAj_OyCIhNFcU/q58wpcvf2l7gswp/photoshopCC-V19.1.6-2018x64.tgz"
+    local filelink="https://www.mediafire.com/file/q58wpcvf2l7gswp/photoshopCC-V19.1.6-2018x64.tgz/file"
     local filepath="$CACHE_PATH/$filename"
 	
 	# Verificar si el archivo ya existe en la carpeta destino
@@ -118,7 +135,25 @@ function install_photoshopSE() {
        rm "$filepath" || error "Error removing existing file: $filepath"
     fi
 	
-	wget -O "$filepath" "$filelink" || error "Error downloading $filename"
+	# Descargar la página de MediaFire
+    show_message "Downloading MediaFire page..."
+    local mediapage="$CACHE_PATH/mediapage.html"
+    wget -O "$mediapage" "$filelink" || { error "Error downloading MediaFire page"; return 1; }
+
+    # Extraer la URL de descarga directa del archivo desde la página de MediaFire
+    show_message "Extracting direct download URL from MediaFire page..."
+    local real_url=$(grep -oP 'https://download[0-9]+\.mediafire\.com/[^"]+' "$mediapage" | head -n 1)
+    if [ -z "$real_url" ]; then
+        error "Failed to extract direct download URL from MediaFire page."
+        return 1
+    else
+        show_message "Direct download URL extracted: $real_url"
+    fi
+
+    # Descargar el archivo real mediante wget
+    #show_message "Downloading real file from URL: $real_url"
+    show_message "Downloading $filename (1.12Gb) please wait to complete..."
+    wget -O "$filepath" "$real_url" || { error "Error downloading $filename"; return 1; }
 		
     mkdir "$RESOURCES_PATH/photoshopCC"
     show_message "extract photoshop..."
