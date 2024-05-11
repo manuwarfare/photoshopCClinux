@@ -15,6 +15,7 @@ function main() {
     package_installed wine64
     package_installed md5sum
     package_installed winetricks
+    package_installed wget
 
     RESOURCES_PATH="$SCR_PATH/resources"
     WINE_PREFIX="$SCR_PATH/prefix"
