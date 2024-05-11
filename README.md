@@ -58,6 +58,12 @@ chmod +x setup.sh && ./setup.sh
 ```
 ![screenshot](images/setup-screenshot.png)
 
+during installation please pay attention to the script messages
+
+> **NOTE :** make sure OS version in wine is on windows 7
+
+installer script use `winetricks` to install necessary components
+
 ## :computer: Installation options
 
 you can use `-d` to specify the installation path, and `-c` for the cache directory.
@@ -73,18 +79,6 @@ when no options are given, the installer script will use the default path,
 the uninstaller script and others will detect your custom path so there is no problem,
 I recommend using the `-d` option  and having the default cache directory.
 this feature is currently being tested, and will be added to `setup.sh` later
-
-
-<div align="center" class="tip" markdown="1" style>
-
-![setup-screenshot](images/setup-screenshot.png)
-</div>
-
-during installation please pay attention to the script messages
-
-> **NOTE :** make sure OS version in wine is on windows 7
-
-installer script use `winetricks` to install necessary components
 
 ## :wine_glass: wineprefix Configuration
 if you need to configure the wineprefix of photoshop you can use `winecfg.sh` script just run the command below
