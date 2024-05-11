@@ -29,6 +29,7 @@ and sets some necessary components up for the best performance
 * `wine64`
 * `winetricks`
 * `wget`
+* `md5sum`
 
 
 if they are not already installed you can install them using your package manager for example in Fedora Linux
