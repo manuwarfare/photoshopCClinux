@@ -56,6 +56,9 @@ then you can easily run `setup.sh` script to install photoshop cc on your Linux 
 ```bash
 chmod +x setup.sh && ./setup.sh
 ```
+![screenshot](images/setup-screenshot.png)
+
+## :computer: Installation options
 
 you can use `-d` to specify the installation path, and `-c` for the cache directory.
 for example:
